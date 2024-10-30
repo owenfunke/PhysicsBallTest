@@ -3,10 +3,13 @@ using System;
 
 public partial class Balls : RigidBody2D
 {
-	public const float initialVelocity = 20;
-	public const float initialX = 0;
-	public const float gravity = -9.8f;
-	public float positionx = 0;
+	public const float initialVelocity = 200; //m/s
+	public const float initialX = 0f; //m
+	public const float gravity = -9.8f; //m/s^2
+	public const float coeffFric = 0.1f;
+	public const float ballMass = 10; //kg
+	public float positionx = 0f; //m
+	
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
