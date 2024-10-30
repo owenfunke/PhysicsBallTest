@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://c0bsbque00bhl"]
+[gd_scene load_steps=7 format=3 uid="uid://c0bsbque00bhl"]
 
 [ext_resource type="Texture2D" uid="uid://cwfqavku8mwpb" path="res://Assets/target-logo-transparent.png" id="1_5lgfy"]
+[ext_resource type="Script" path="res://Main.cs" id="1_txt8e"]
 [ext_resource type="Texture2D" uid="uid://da18j7kn1ohbj" path="res://Assets/TwixBar.png" id="2_bilxi"]
+[ext_resource type="Script" path="res://Balls.cs" id="2_cbs5a"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3mdyr"]
 radius = 550.363
@@ -10,8 +12,10 @@ radius = 550.363
 size = Vector2(787, 164)
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_txt8e")
 
 [node name="Balls" type="RigidBody2D" parent="."]
+script = ExtResource("2_cbs5a")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Balls"]
 position = Vector2(60, 60)
@@ -33,3 +37,5 @@ shape = SubResource("RectangleShape2D_rtm1y")
 position = Vector2(0, 200)
 texture = ExtResource("2_bilxi")
 centered = false
+
+[node name="TimeCounter" type="Timer" parent="."]
