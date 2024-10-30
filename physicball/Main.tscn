@@ -1,37 +1,35 @@
-[gd_scene load_steps=6 format=3 uid="uid://cfhuqiare60a0"]
+[gd_scene load_steps=5 format=3 uid="uid://c0bsbque00bhl"]
 
-[ext_resource type="Script" path="res://Ball.cs" id="1_d5cn4"]
-[ext_resource type="Texture2D" uid="uid://cwfqavku8mwpb" path="res://Assets/target-logo-transparent.png" id="2_snyka"]
-[ext_resource type="Texture2D" uid="uid://da18j7kn1ohbj" path="res://Assets/TwixBar.png" id="3_00sii"]
+[ext_resource type="Texture2D" uid="uid://cwfqavku8mwpb" path="res://Assets/target-logo-transparent.png" id="1_5lgfy"]
+[ext_resource type="Texture2D" uid="uid://da18j7kn1ohbj" path="res://Assets/TwixBar.png" id="2_bilxi"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_04tct"]
-radius = 55.0364
+[sub_resource type="CircleShape2D" id="CircleShape2D_3mdyr"]
+radius = 550.363
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_s5ji0"]
-size = Vector2(480, 100)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rtm1y"]
+size = Vector2(787, 164)
 
 [node name="Main" type="Node2D"]
 
-[node name="Ball" type="CharacterBody2D" parent="."]
-script = ExtResource("1_d5cn4")
+[node name="Balls" type="RigidBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Balls"]
 position = Vector2(60, 60)
-shape = SubResource("CircleShape2D_04tct")
+scale = Vector2(0.1, 0.1)
+shape = SubResource("CircleShape2D_3mdyr")
 
-[node name="Sprite2D" type="Sprite2D" parent="Ball"]
+[node name="Sprite2D" type="Sprite2D" parent="Balls"]
 scale = Vector2(0.05, 0.05)
-texture = ExtResource("2_snyka")
+texture = ExtResource("1_5lgfy")
 centered = false
 
-[node name="Block" type="StaticBody2D" parent="."]
+[node name="Platform" type="StaticBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Block"]
-position = Vector2(243, 446)
-shape = SubResource("RectangleShape2D_s5ji0")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform"]
+position = Vector2(396.5, 602)
+shape = SubResource("RectangleShape2D_rtm1y")
 
-[node name="Sprite2D" type="Sprite2D" parent="Block"]
+[node name="Sprite2D" type="Sprite2D" parent="Platform"]
 position = Vector2(0, 200)
-scale = Vector2(0.615, 0.615)
-texture = ExtResource("3_00sii")
+texture = ExtResource("2_bilxi")
 centered = false
