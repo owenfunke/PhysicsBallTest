@@ -16,7 +16,8 @@ public partial class Balls : RigidBody2D
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		positionx = initialX + initialVelocity * ;
+		float time = (float)Time.GetTicksMsec() / 1000; 
+		positionx = initialX + initialVelocity * time;
 		Position = new Vector2(positionx, Position.Y);
 	}
 }
